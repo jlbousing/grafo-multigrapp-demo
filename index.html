@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    <title>Prueba de multigrAPP</title>
+
+    <style type="text/css">
+        body {
+            font: 10pt sans;
+        }
+
+        #mynetwork {
+            width: 600px;
+            height: 600px;
+            border: 1px solid lightgray;
+        }
+    </style>
+
+
+    <link href="./node_modules/vis/dist/vis.css" rel="stylesheet" type="text/css"/>
+
+</head>
+
+<body onload="draw();">
+
+<p>
+    <input type="button" id="btn-UD" value="Up-Down">
+    <input type="button" id="btn-DU" value="Down-Up">
+    <input type="button" id="btn-LR" value="Left-Right">
+    <input type="button" id="btn-RL" value="Right-Left">
+    <input type="hidden" id='direction' value="UD">
+</p>
+
+<div id="mynetwork"></div>
+<div id="app">
+  <p>Ingrese el nombre de la variable</p>
+  <input id="varNombre" type="text" name="" value="">
+  <br>
+    <p>Selecione el padre de la variable</p>
+  <select class="" name="selectVar" id="selectVar">
+    <option v-for="node in nodes" :value="node.id">{{node.label}}</option>
+  </select>
+
+  <button type="button" name="button" onclick="createConnection()">Crear Variable</button>
+</div>
+
+
+
+<p id="selection"></p>
+<script language="JavaScript">
+    var directionInput = document.getElementById("direction");
+    var btnUD = document.getElementById("btn-UD");
+    btnUD.onclick = function () {
+        directionInput.value = "UD";
+        draw();
+    };
+    var btnDU = document.getElementById("btn-DU");
+    btnDU.onclick = function () {
+        directionInput.value = "DU";
+        draw();
+    };
+    var btnLR = document.getElementById("btn-LR");
+    btnLR.onclick = function () {
+        directionInput.value = "LR";
+        draw();
+    };
+    var btnRL = document.getElementById("btn-RL");
+    btnRL.onclick = function () {
+        directionInput.value = "RL";
+        draw();
+    };
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript" src="./node_modules/vis/dist/vis.js"></script>
+<script src="./main.js"></script>
+
+
+</body>
+</html>

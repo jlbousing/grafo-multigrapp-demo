@@ -1,0 +1,14 @@
+{
+  "name": "grafosjs",
+  "version": "1.0.0",
+  "description": "prueba de creacion de grafos con visJs para crear arboles de grafos en javaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jorge Bou-saad",
+  "license": "ISC",
+  "dependencies": {
+    "vis": "^4.21.0"
+  }
+}
