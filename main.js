@@ -122,14 +122,25 @@ function draw() {
     };
 
     var options = {
-        edges: {
-            smooth: {
-                type: 'cubicBezier',
-                forceDirection: (directionInput.value == "UD" || directionInput.value == "DU") ? 'vertical' : 'horizontal',
-                roundness: 0.4
-            }
-        },
-        layout: {
+      edges: {
+      font: {
+        size: 12
+      },
+      widthConstraint: {
+        maximum: 90
+      }
+    },
+    nodes: {
+      shape: 'box',
+      margin: 10,
+      widthConstraint: {
+        maximum: 200
+      }
+    },
+    physics: {
+      enabled: false
+    },
+      layout: {
             hierarchical: {
                 direction: directionInput.value
             }
